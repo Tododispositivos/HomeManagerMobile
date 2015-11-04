@@ -1,0 +1,293 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// My custom color. I’ll override the default for $positive.
+// Note that it’s before we load the rest of Ionic.
+// This is important!
+$positive: #251E53 !default;
+$royal: #FF1493;
+$img-login:'http://www.monroy-ramirez.cl/HomeManager/imagenes/G0042290e.png';
+$img-uno:'http://www.monroy-ramirez.cl/HomeManager/imagenes/G0012281b.png';
+$img-dos:'http://www.monroy-ramirez.cl/HomeManager/imagenes/G0062304b.png';
+$img-tres:'http://www.monroy-ramirez.cl/HomeManager/imagenes/G0071781b.png';
+$img-cuatro:'http://www.monroy-ramirez.cl/HomeManager/imagenes/GOPR1496b.png';
+$img-cinco:'http://www.monroy-ramirez.cl/HomeManager/imagenes/GOPR1508b.png';
+$color-dorado: #FFD700;
+$color-blanco: #fff;
+$color-rojo: red;
+
+.item p {
+  color: $color-blanco !important;
+}
+a {
+  text-decoration: none;
+}
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+.color-dorado{
+  color: $color-dorado;
+}
+.color-blanco{
+  color: $color-blanco;
+}
+.color-rojo{
+  color: $color-rojo;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.item.item-divider.transparent {
+  background-color: transparent;
+  color:#fff;
+}
+.item.item-text-wrap.transparent {
+  background-color: transparent;
+  color:#fff;
+}
+.item.item-icon-left.transparent {
+  background-color: transparent;
+  color:#fff;
+}
+.item.item-icon-right.transparent {
+  background-color: transparent;
+  color:#fff;
+}
+.scroll-bg {
+  background: url($img-login) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.scroll-bg-uno {
+  background: url($img-uno) no-repeat center center fixed;
+  background-size: cover;
+}
+.scroll-bg-dos {
+  background: url($img-dos) no-repeat center center fixed;
+  background-size: cover;
+}
+.scroll-bg-tres {
+  background: url($img-tres) no-repeat center center fixed;
+  background-size: cover;
+}
+.scroll-bg-cuatro {
+  background: url($img-cuatro) no-repeat center center fixed;
+  background-size: cover;
+}
+.scroll-bg-cinco {
+  background: url($img-cinco) no-repeat center center fixed;
+  background-size: cover;
+}
+.input-rut[type="text"] 
+{
+    background: transparent;
+    border-bottom: 1px solid #aaa;
+    color: #aaa;
+    padding-top:15px;
+    font-size: 20px;
+ }
+.input-mes[type="month"] 
+{
+    background: transparent;
+ }
+.input-contrasena[type="password"]
+{
+    background: transparent;
+    border-bottom: 1px solid #aaa;
+    color: #aaa;
+    padding-top:15px;
+    font-size: 20px;
+ }
+ .div-login {
+ 	padding-top: 95%;
+ }
+
+ .wrap {
+  background: transparent;
+  color: #fff;
+  /*margin-left: 10px;*/
+  align: center;
+ 
+}
+.letra-chica{
+  font-size: 12px;
+}
+
+.letra-mediana{
+  font-size: 16px;
+} 
+
+.letra-grande{
+  font-size: 24px;
+} 
+/* -------------------------------------
+ * Bar container
+ * ------------------------------------- */
+.progress-radial {
+  float: left;
+  margin-right: 20px; /*Separación entre Gráficos*/
+  position: relative;
+  width: 100px; /*Circulo Exterior*/
+  height: 100px; /*Circulo Exterior*/
+  border-radius: 50%;
+  background-color: #fff; /*Blanco*/
+  /*border: 1px solid #DCDCDC;  contorno Gris Claro*/
+}
+
+/* -------------------------------------
+ * Optional centered circle w/text
+ * ------------------------------------- */
+.progress-radial .overlay {
+  position: absolute;
+  width: 94px;
+  height: 94px;
+  background-color: #2f3439; /*Gris Oscuro*/
+  border-radius: 50%;
+  margin-left: 3px;
+  margin-top: 3px;
+  text-align: center;
+  line-height: 90px;
+  font-size: 30px;
+  color: #fff; /*Blanco*/
+  /*border: 1px solid #DCDCDC;  contorno Gris Claro*/
+}
+
+/* -------------------------------------
+ * Bar container al 75%
+ * ------------------------------------- */
+.progress-radial-75 {
+  float: left;
+  margin-right: 20px; /*Separación entre Gráficos*/
+  position: relative;
+  width: 75px; /*Circulo Exterior*/
+  height: 75px; /*Circulo Exterior*/
+  border-radius: 50%;
+  background-color: #fff; /*Blanco*/
+  /*border: 1px solid #DCDCDC;  contorno Gris Claro*/
+
+}
+
+/* -------------------------------------
+ * Optional centered circle w/text al 75%
+ * ------------------------------------- */
+.progress-radial-75 .overlay {
+  position: absolute;
+  width: 69px;
+  height: 69px;
+  background-color: #2f3439; /*Gris Oscuro*/
+  border-radius: 50%;
+  margin-left: 3px;
+  margin-top: 3px;
+  text-align: center;
+  line-height: 63px;
+  font-size: 20px;
+  color: #fff; /*Blanco*/
+  /*border: 1px solid #DCDCDC;  contorno Gris Claro*/
+}
+
+/* -------------------------------------
+ * Mixin for progress-% class
+ * ------------------------------------- */
+.progress-0 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(90deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-5 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(108deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-10 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(126deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-15 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-20 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(162deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-25 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(180deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-30 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(198deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-35 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(216deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-40 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(234deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-45 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(252deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-50 {
+  background-image: linear-gradient(-90deg, #00FFFF 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-55 {
+  background-image: linear-gradient(-72deg, #00FFFF 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-60 {
+  background-image: linear-gradient(-54deg, #00FFFF 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-65 {
+  background-image: linear-gradient(-36deg, #00FFFF 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-70 {
+  background-image: linear-gradient(-18deg, #00FFFF 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-75 {
+  background-image: linear-gradient(0deg, #00FFFF 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-80 {
+  background-image: linear-gradient(18deg, #00FFFF 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-85 {
+  background-image: linear-gradient(36deg, #00FFFF 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-90 {
+  background-image: linear-gradient(54deg, #00FFFF 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-95 {
+  background-image: linear-gradient(72deg, #00FFFF 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-100 {
+  background-image: linear-gradient(90deg, #00FFFF 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #00FFFF 50%, #2f3439 50%, #2f3439);
+}

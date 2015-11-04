@@ -1,0 +1,43 @@
+   <ion-view view-title="BANCOS">
+         <ion-nav-bar class="bar-positive">
+          <ion-nav-back-button>
+          </ion-nav-back-button>
+        </ion-nav-bar>
+       <ion-content padding="true">
+          <!-- <ion-spinner icon="android"></ion-spinner>-->
+          <div class="container" >
+           <!-- <ion-refresher on-refresh="doRefresh()"
+            </ion-refresher>-->
+             <table class="table table-striped" data-sort-name="ban_desc" data-sort-order="asc">
+                <thead>
+                  <tr>
+                    <th data-field="ban_id" data-align="center" data-sortable="true"><strong>#</strong></th>
+                    <th data-field="ban_desc" data-align="left" data-sortable="true"><strong>Banco</strong></th>
+                    <th data-field="ban_fono" data-align="left" data-sortable="true"><strong>Teléfono</strong></th>
+                    <th data-field="ban_eje" data-align="left" data-sortable="true"><strong>Ejecutivo</strong></th>
+                    <th><strong>Acción</strong></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="banco in data | orderBy : 'desc'">
+                    <td>{{banco.ban_id}}</td>
+                    <td>{{banco.ban_desc | uppercase}}</td>
+                    <td>{{banco.ban_fono}}</td>
+                    <td>{{banco.ban_eje}}</td>
+                    <td> <button type="button" class="btn btn-warning" ng-click="editBanco(banco.ban_id)">
+                            <span class="glyphicon glyphicon-pencil"></span> Editar
+                         </button>
+                         <button type="button" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash"></span> Eliminar
+                         </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+         </div>
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Inicio</a>
+          </p>
+        </ion-content>
+      </ion-view>
+

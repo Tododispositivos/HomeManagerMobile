@@ -1,0 +1,12 @@
+{
+  "name": "HomeManager Mobile",
+  "app_id": "12cfec55",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

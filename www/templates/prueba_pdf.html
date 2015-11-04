@@ -1,0 +1,28 @@
+   <ion-view view-title="Prueba Archivo PDF">
+         <ion-nav-bar class="bar-positive">
+          <ion-nav-back-button>
+          </ion-nav-back-button>
+        </ion-nav-bar>
+       <ion-content padding="true" class="scroll-bg-uno" >
+          <div class="row"  class="text-center container">
+              <div class="btn-group">
+                <button class="btn" ng-click="gotoPage(1)">|&lt;</button>
+                <button class="btn" ng-click="prevPage()">&lt;</button>
+                <button class="btn" ng-click="nextPage()">&gt;</button>
+                <button class="btn" ng-click="gotoPage(totalPages)">&gt;|</button>
+              </div>
+            </div>
+          <div class="row">
+        <span class="label" ng-show="totalPages">{{currentPage}}/{{totalPages}}</span>
+      </div>
+      <div class="row">
+        <pdfviewer src="{{pdfURL}}" on-page-load='pageLoaded(page,total)' id="viewer" load-progress='loadProgress(loaded, total, state)'></pdfviewer>
+      </div>
+
+     
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Inicio</a>
+          </p>
+        </ion-content>
+      </ion-view>
+
