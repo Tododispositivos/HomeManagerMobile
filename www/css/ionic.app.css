@@ -7763,17 +7763,35 @@ a.button {
   border-bottom: 1px solid #aaa;
   color: #aaa;
   padding-top: 15px;
-  font-size: 20px; }
+  font-size: 15px; }
 
 .input-mes[type="month"] {
-  background: transparent; }
+  background: transparent;
+  color: #fff;
+  border: 1px solid #251E53; }
+
+.input-fecha[type="date"] {
+  background: transparent;
+  color: #fff; }
+
+.input-hora[type="time"] {
+  background: transparent;
+  color: #fff; }
+
+.input-numero[type="number"] {
+  background: transparent;
+  color: #fff; }
+
+.input-rango[type="range"] {
+  background: transparent;
+  color: #fff; }
 
 .input-contrasena[type="password"] {
   background: transparent;
   border-bottom: 1px solid #aaa;
   color: #aaa;
   padding-top: 15px;
-  font-size: 20px; }
+  font-size: 15px; }
 
 .div-login {
   padding-top: 95%; }

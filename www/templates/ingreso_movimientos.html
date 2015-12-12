@@ -1,0 +1,39 @@
+<ion-modal-view>
+	<ion-header-bar  class="bar bar-header bar-positive">
+      <h1 class="title">Ingreso de Movimientos</h1>
+      <button class="button button-clear button-primary" ng-click="modal.hide()">Cancelar</button>
+    </ion-header-bar>
+   	<ion-content class="padding scroll-bg-cinco">
+        <form name="myForm" novalidate="" ng-submit="">
+          <div class="list transparent" >
+              	<label class="item item-input transparent color-blanco">
+				  Cargo &nbsp;
+		    	 <i class="ion-ios-cloud-download color-rojo"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+		    	 <input class="input-rango" type="range" name="volume" ng-model="mov.abono" min="0" max="1" value="0">
+		    	 <i class="ion-ios-cloud-upload-outline"></i>
+		    	 &nbsp; Abono  &nbsp;&nbsp;
+		    	</label>
+				<label class="item item-input transparent">
+				  <span class="input-label color-blanco">Saldo Actual</span>
+				  <span class="input-label color-blanco">{{ saldo }}</span>
+				</label>
+				<label class="item item-input transparent">
+	              <span class="input-label color-blanco">Fecha</span>
+	              <input class="input-fecha" type="date" name="fecha" ng-model="mov.fecha" value="{{ fecha }}">
+	            </label> 
+	           <label class="item item-input transparent">
+	              <span class="input-label color-blanco">Hora</span>
+	              <input class="input-hora color-blanco" type="time" name="hora" ng-model="mov.hora" value="{{ hora }}">
+	            </label> 
+	            <label class="item item-input transparent">
+				  <span class="input-label color-blanco">Monto $</span>
+				  <input class="input-numero color-blanco" type="number" name="monto" ng-model="mov.monto" value="0">
+				</label>
+	         
+           </div> 
+           <button class="button button-full button-positive" type="submit">
+            Agregar
+          </button>
+        </form>
+      </ion-content>
+</ion-modal-view>

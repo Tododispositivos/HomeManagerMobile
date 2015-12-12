@@ -1,65 +1,39 @@
-     <ion-view view-title="Home Manager Mobile" >
-        <ion-nav-bar class="bar-positive">
-          <ion-nav-back-button>
-          </ion-nav-back-button>
-          <!--
-             <div class="bar bar-subheader bar-positive">
-             <span class="title" ng-bind="date | date:'EEEE dd-MMMM-yyyy HH:mm'"></span>
-         </div>
-         -->
-       </ion-nav-bar>
-        <ion-content padding="true" class="scroll-bg-tres" ng-init="getCuentas()">
-          <ion-refresher on-refresh="refreshCuentas()"></ion-refresher> 
-        <br>
-         <div align="center" class="transparent letra-grande color-dorado" >
-                 Mis Cuentas
-         </div>  
-         <ion-slide-box does-continue="true"show-pager="true" delegate-handle="image-viewer"   on-slide-changed="slideHasChanged($index)" >
-            <ion-slide class="transparent letra-chica" ng-repeat="miscuentas in dataq3 | orderBy : 'nom_cta_cte'"  repeat-done="update()">
-                   <div align="center" class="card transparent  letra-mediana" >
-                        <a  class='color-blanco' href="#/tab/cuentasdetalle" >
-                          <button class="button button-block transparent  letra-mediana color-blanco" ng-click="getDetalleCuenta('{{miscuentas.num_cta_cte}}')">
-                          {{miscuentas.nom_cta_cte | uppercase}} <br> 
-                           Saldo: {{miscuentas.saldo_cta  | currency : CLP : 0}}
-                          </button>
-                        </a>
-                        <br>
-                        &nbsp;
-                  </div>
-           </ion-slide>
-         </ion-slide-box> 
-         <br>
-         <div align="center" class="transparent letra-grande color-dorado">
-                 Cuentas Familiares
-         </div>  
-         <ion-slide-box does-continue="true"show-pager="true" delegate-handle="image-viewer"   on-slide-changed="slideHasChanged($index)" >
-            <ion-slide class="transparent letra-chica"  ng-repeat="famcuentas in dataq4 |  orderBy : 'nom_cta_cte'" repeat-done="update()">
-                   <div align="center" class="card transparent  letra-mediana" >
-                        <!-- <i class="ion-chevron-left"></i> -->
-                        <a  class='color-blanco' href="#/tab/cuentasdetalle" >
-                          <button class="button button-block  transparent  letra-mediana color-blanco" ng-click="getDetalleCuenta('{{famcuentas.num_cta_cte}}')">
-                           {{famcuentas.nom_cta_cte | uppercase}} <br> 
-                           Saldo: {{famcuentas.saldo_cta  | currency : CLP : 0}}
-                          </button>
-                        </a>
-                        <br>
-                        &nbsp;
-                         <!-- <i class="ion-chevron-right"></i> -->
-                   </div>
-           </ion-slide>
-         </ion-slide-box> 
-      
-          
-          
-     <!--  <div >
-          
-            <a class="item item-icon-left item-icon-right transparent" href="#" >
-            
-            
-            <i class="icon ion-ios-arrow-right"></i>
-            </a>
-      </div>  -->
-  </ion-content> 
-</ion-view> 
-
-  
+<ion-view view-title="Home Manager Mobile" >
+  <ion-content padding="true" class="scroll-bg-tres" ng-init="getCuentas()">
+    <ion-refresher on-refresh="refreshCuentas()"></ion-refresher>
+    <br>
+    <div align="center" class="transparent letra-grande royal" >
+      Mis Cuentas
+    </div> 
+    <ion-slide-box does-continue="true"show-pager="true" delegate-handle="image-viewer" on-slide-changed="slideHasChanged($index)" >
+      <ion-slide class="transparent letra-chica" ng-repeat="miscuentas in dataq3 | orderBy : 'nom_cta_cte'">
+        <div align="center" class="card transparent  letra-mediana" >
+          <a  class='color-blanco' href="#/tab/cuentasdetalle" >
+          <button class="button button-block transparent  letra-mediana color-blanco" ng-click="getDetalleCuenta('{{miscuentas.num_cta_cte}}')">
+          {{miscuentas.nom_cta_cte | uppercase}} <br>
+          Saldo: {{miscuentas.saldo_cta  | currency : CLP : 0}}
+          </button>
+          </a>
+          <br> &nbsp;
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+    <br>
+    <div align="center" class="transparent letra-grande royal">
+      Cuentas Familiares
+    </div> 
+    <ion-slide-box does-continue="true"show-pager="true" delegate-handle="image-viewer" on-slide-changed="slideHasChanged($index)" >
+      <ion-slide class="transparent letra-chica"  ng-repeat="famcuentas in dataq4 |  orderBy : 'nom_cta_cte'">
+        <div align="center" class="card transparent  letra-mediana" >
+          <a  class='color-blanco' href="#/tab/cuentasdetalle" >
+            <button class="button button-block  transparent  letra-mediana color-blanco" ng-click="getDetalleCuenta('{{famcuentas.num_cta_cte}}')">
+            {{famcuentas.nom_cta_cte | uppercase}} <br>
+            Saldo: {{famcuentas.saldo_cta  | currency : CLP : 0}}
+            </button>
+          </a>
+          <br> &nbsp;
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

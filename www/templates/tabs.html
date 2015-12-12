@@ -1,16 +1,30 @@
-<ion-view>
-        <ion-tabs class="tabs-icon-top tabs-positive">
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="right">
+         <button class="button button-icon icon ion-navicon" menu-toggle="right"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="home-tab"  animation="slide-left-right"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="right" width="50">
+    <ion-header-bar class="bar bar-header bar-positive"></ion-header-bar>
+    <ion-content has-header="true">
+       <div class="list">
+          <a menu-close class="item letra-grande" menu-toggle="right" href="#/tab/home">
+            <i class="ion-ios-home-outline"></i></a>
+          <a menu-close class="item letra-grande" menu-toggle="right" href="#/tab/home">
+            <i class="ion-ios-gear-outline"></i></a>
+          <a menu-close class="item letra-grande" menu-toggle="right" href="#/tab/cuentas">
+            <i class="ion-social-usd-outline"></i></a>
+       </div>
+    </ion-content>
+    <ion-footer-bar class="bar bar-stable">
+       <a menu-close class="item-clear pull-right letra-grande" href="#/sign-in">
+       <i class="ion-log-out"></i>
+       </a>
+    </ion-footer-bar>
+  </ion-side-menu>
+</ion-side-menus>
 
-          <ion-tab title="Inicio" icon="ion-ios-home-outline" href="#/tab/home">
-            <ion-nav-view name="home-tab"></ion-nav-view>
-          </ion-tab>
-
-          <ion-tab title="Administración" icon="ion-ios-gear-outline" href="#/tab/about">
-            <ion-nav-view name="about-tab"></ion-nav-view>
-          </ion-tab>
-
-          <ion-tab title="Salir" icon="ion-log-out" href="#/sign-in">
-          </ion-tab>
-
-        </ion-tabs>
-</ion-view>

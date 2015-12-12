@@ -1,135 +1,60 @@
- <ion-view view-title="Home Manager Mobile">
-   <ion-nav-bar class="bar-positive">
-       <ion-nav-buttons side="right">
-            <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
-       </ion-nav-buttons>
-   </ion-nav-bar>
-  
-   <ion-content padding="true" class="scroll-bg-uno">
-      <div align="center" class="container wrap" >
-          Hola! {{nombre}} ¿Qué deseas hacer?. <br>
-      </div>
-     <ion-slide-box does-continue="true" align="center"show-pager="false" on-slide-changed="slideHasChanged($index)">
-        <ion-slide>
-           <div class="card wrap" >
-              <div class="item item-text-wrap wrap">
-                 REVISAR MIS CUENTAS
-              </div>
-              <br>
+    <ion-view view-title="Home Manager Mobile">
+       <ion-content  has-header="true" padding="true" class="scroll-bg-uno">
+          <div class="container wrap" >
+             <div class="item item-avatar transparent">
+                <img src="https://lh3.googleusercontent.com/-agqmNCLCSgA/Tsw4hDGyFvI/AAAAAAAABFs/fa3HHjVYccA/w140-h140-p/11">
+                <p>{{nombre}} {{rut}}</p>
+                <p>{{email}}</p>
+             </div>
+          </div>
+         <ion-slide-box does-continue="true" align="center"show-pager="true" on-slide-changed="slideHasChanged($index)">
+            <ion-slide>
+              <div class="card wrap" >
                 <div ng-controller="CuentasTabCtrl">
-                 <a href="#/tab/cuentas">
-                 <button class="button icon-left ion-social-usd-outline button-positive"  >Cuentas</button><!-- ng-click="getCuentas()" -->
-                 </a>
+                  <a href="#/tab/cuentas">
+                  <button class="button icon-left ion-social-usd-outline button-positive">
+                    Revisar mis Cuentas
+                  </button>
+                  </a>
                 </div>
-           </div>
-        </ion-slide>
-       <ion-slide >
-          <div class="card wrap" >
-              <div class="item item-text-wrap wrap">
-                 INGRESAR GASTOS
-              </div>
-              <br>
-               <div class="progress-radial-75 progress-50">
-                    <div class="overlay">50%</div>
                </div>
-               <div class="progress-radial progress-90">
-                    <div class="overlay">90%</div>
-               </div>
-               <div class="progress-radial-75 progress-75">
-                    <div class="overlay">75%</div>
-               </div>
-          </div>
-        </ion-slide>
-        <ion-slide >
-          <div class="card wrap" >
-              <div class="item item-text-wrap wrap">
-                 LIQUIDAR GASTOS
-              </div>
-              <br>
-               <div class="progress-radial-75 progress-50">
-                    <div class="overlay">50%</div>
-               </div>
-               <div class="progress-radial progress-90">
-                    <div class="overlay">90%</div>
-               </div>
-               <div class="progress-radial-75 progress-75">
-                    <div class="overlay">75%</div>
-               </div>
-          </div>
-        </ion-slide>
-         <ion-slide>
-            <div class="card wrap" >
-                <div class="item item-text-wrap wrap">
-                   ADMINISTRAR
+            </ion-slide>
+            <ion-slide >
+              <div class="card wrap" >
+                <div ng-controller="CuentasTabCtrl">
+                  <a href="#/tab/cuentas">
+                  <button class="button icon-left ion-ios-cart-outline button-positive">
+                    Ingresar Gastos
+                  </button>
+                  </a>
                 </div>
                 <br>
-                 <button class="button icon-left ion-social-usd-outline button-positive">Cuentas</button>
-                 <button class="button icon-left ion-ios-cart-outline button-positive">Gastos</button>
-                 <button class="button icon-left ion-ios-cart button-positive">Grupos de Gastos</button>
-                 <button class="button icon-left ion-ios-shuffle button-positive">Movimientos</button>
-                 <button class="button icon-left ion-ios-shuffle-strong button-positive">Grupos de Movimientos</button>
-                 <button class="button icon-left ion-social-bitcoin-outline button-positive">Bancos</button>
-                 <button class="button icon-left ion-ios-unlocked-outline button-positive">Cambiar Contraseña</button>
-                 <button class="button icon-left ion-ios-people-outline button-positive">Usuarios</button>
-                 <button class="button icon-left ion-ios-gear-outline button-positive">Mis Configuraciones</button>
-                 <a href="#/tab/pdf"> <button class="button icon-left ion-ios-gear-outline button-positive">Prueba PDF</button></a>
-            </div>
-        </ion-slide>
-     </ion-slide-box>
-   </ion-content>
-   
-  <!-- <style>
-     body {
-        background: #fff;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color:#000;
-        margin: 0;
-        padding: 0;
-    }
-    .swiper-container {
-        width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-    .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 300px;
-        height: 300px;
-    }
-    </style> 
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image:url(http://www.monroy-ramirez.cl/HomeManager/imagenes/G0042290e.png)"></div>
-            <div class="swiper-slide" style="background-image:url(http://www.monroy-ramirez.cl/HomeManager/imagenes/G0042290e.png)"></div>
-            <div class="swiper-slide" style="background-image:url(http://www.monroy-ramirez.cl/HomeManager/imagenes/G0042290e.png)"></div>
-            <div class="swiper-slide" style="background-image:url(http://www.monroy-ramirez.cl/HomeManager/imagenes/G0042290e.png)"></div>
-            <div class="swiper-slide" style="background-image:url(http://www.monroy-ramirez.cl/HomeManager/imagenes/G0042290e.png)"></div>
-            <div class="swiper-slide" style="background-image:url(http://www.monroy-ramirez.cl/HomeManager/imagenes/G0042290e.png)"></div>
-            <div class="swiper-slide" style="background-image:url(http://www.monroy-ramirez.cl/HomeManager/imagenes/G0042290e.png)"></div>
-            <div class="swiper-slide" style="background-image:url(http://www.monroy-ramirez.cl/HomeManager/imagenes/G0042290e.png)"></div>
-            <div class="swiper-slide" style="background-image:url(http://www.monroy-ramirez.cl/HomeManager/imagenes/G0042290e.png)"></div>
-            <div class="swiper-slide" style="background-image:url(http://www.monroy-ramirez.cl/HomeManager/imagenes/G0042290e.png)"></div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-    <script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        coverflow: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows : true
-        }
-    });
-    </script>-->
-</ion-view> 
-<!-- -->
-  
+                <div ng-controller="CuentasTabCtrl">
+                  <a href="#/tab/cuentas">
+                  <button class="button icon-left ion-ios-calculator-outline button-positive">
+                    Liquidar Gastos</button>
+                  </a>
+                </div>
+               </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="card wrap" >
+                <div ng-controller="CuentasTabCtrl">
+                  <button class="button icon-left ion-ios-gear-outline button-positive">
+                    Mis Configuraciones
+                  </button>
+                </div>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="card wrap" >
+                <div ng-controller="CuentasTabCtrl">
+                  <button class="button icon-left ion-ios-gear-outline button-positive">
+                    Administración
+                  </button>
+                </div>
+              </div>
+            </ion-slide>
+         </ion-slide-box>
+       </ion-content>
+    </ion-view>  

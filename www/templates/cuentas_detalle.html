@@ -1,79 +1,61 @@
-     <ion-view view-title="Home Manager Mobile">
-        <ion-nav-bar class="bar-positive">
-          <ion-nav-back-button>
-          </ion-nav-back-button>
-          
-       </ion-nav-bar>
-      
-      <ion-content padding="true" class="has-subheader scroll-bg-cuatro" ng-init="refreshDetalleCuenta()">
-          <ion-refresher on-refresh="refreshDetalleCuenta()">
-          </ion-refresher> 
-        <!-- <label class="item item-input">
-          <span class="input-label"></span>
-          <input type="month" ng-model="consulta.mes">
-         <button class="button icon ion-ios-search rounded positive"></button> 
-        </label> -->
-         
-         <br>
-     <!-- <ion-slide-box does-continue="true" align="center"show-pager="false" on-slide-changed="slideHasChanged($index)">
-        <ion-slide >
-      -->     
-       <div class="card transparent">
-              <input type="month" ng-model="consulta.mes">
-              <button class="button icon ion-ios-search rounded positive"></button> 
-       </div>  
-       <div class="card transparent" ng-repeat="detalle in datadetalleXcuenta | orderBy : '-mov_fec_mov'">
-          <div class="item item-text-wrap transparent letra-mediana" ng-cloak>
-             <div class="row color-blanco">
-                <div class="col col-33">
-                   {{detalle.mov_fec_mov | limitTo:10}}  
-                </div>  
-                <div class="col">
-                   {{detalle.tip_mov_desc}}  
-                </div>  
+<ion-view view-title="Home Manager Mobile" cache-view="false" ng-controller="CuentasTabCtrl">
+  <ion-content padding="true" class="scroll-bg-cuatro" ng-init="refreshDetalleCuenta()">
+       <ion-refresher on-refresh="refreshDetalleCuenta()">
+       </ion-refresher>
+       <div class="row">
+         <div class="col">
+           <div class="container wrap">
+              Cuenta: {{cuenta}}
+           </div>
+         </div>
+       </div>
+       <div class="row">
+          <div class="col col-80">
+            <form name="FormMes" ng-controller="CuentasTabCtrl" ng-submit="refreshDetalleCuenta()">
+             <div align="center" class="row color-blanco">
+               <input type="month" class="transparent input-mes" ng-model="consultafecha" value="{{date | date:'MM-yyyy'}}">
+                  <button class="button button-clear">
+                  <i class="icon ion-ios-search-strong"></i>
+                  </button> 
              </div>
-             <div class="row color-blanco">
-                <div class="col col-33">
-                 <span ng-show="{{detalle.mov_mnt_mov}} > 0" class="color-blanco"> {{detalle.mov_mnt_mov | currency : CLP : 0}}  </span>
-                 <span ng-show="{{detalle.mov_mnt_mov}} < 0" class="color-rojo">  {{detalle.mov_mnt_mov | currency : CLP : 0}}  </span>  
-                </div>
-                <div align="center" class="col col-33">
-                  <span ng-show="{{detalle.mov_mnt_mov}} > 0" class="ion-ios-cloud-upload-outline color-blanco letra-grande"> </span>        
-                  <span ng-show="{{detalle.mov_mnt_mov}} < 0" class="ion-ios-cloud-download color-rojo letra-grande"> </span>
-                </div>  
-                <div align="right" class="col col-33">
-                  <span ng-show="{{detalle.mov_sal_cta}} >= 0" class="color-blanco"> {{detalle.mov_sal_cta | currency : CLP : 0}}</span>
-                  <span ng-show="{{detalle.mov_sal_cta}} < 0" class="color-rojo"> {{detalle.mov_sal_cta | currency : CLP : 0}}</span>
-                </div>  
-             </div>
-             <div class="row color-blanco">
-                <div class="col">
-                   {{detalle.mov_obs}}  
-                </div>  
-             </div>
+            </form>
           </div>
-      </div>
-     <!--    </ion-slide>
-        </ion-slide-box> 
-      --> 
-  <!-- <div class="row transparent">
-        <div class="col letra-chica">Fecha</div>
-        <div class="col letra-chica">Movimiento</div>
-        <div class="col letra-chica">$</div>
-        <div class="col letra-chica">Saldo</div>
-        <div class="col letra-chica">Comentario</div>
-      </div>
-      <div ng-repeat="detalle in datadetalleXcuenta | orderBy : 'mov_fec_mov'" class="row transparent">
-           <div class="col letra-chica">{{detalle.mov_fec_mov | limitTo:10}}</div>
-           <div class="col letra-chica">{{detalle.tip_mov_desc}}</div>
-           <div class="col letra-chica">{{detalle.mov_mnt_mov | currency}}</div>
-           <div class="col letra-chica">{{detalle.mov_sal_cta | currency}}</div>
-           <div class="col letra-chica">{{detalle.mov_obs}}</div>
-           <i class="icon ion-ios-arrow-right"></i>
-      </div> -->
-     
-      
-  </ion-content> 
-</ion-view> 
-
-  
+          <div class="col col-20" ng-controller="ModalCtrl">
+            <button class="button button-clear" ng-click="modal.show()">
+              <i class="icon ion-ios-plus-outline"></i>
+            </button> 
+          </div>
+       </div>
+       <div class="card transparent"  delegate-handle="image-viewer" ng-controller="CuentasTabCtrl" ng-repeat="detalle in datadetalleXcuenta | orderBy : '-mov_fec_mov'">
+            <div class="item item-text-wrap transparent letra-mediana">
+               <div class="row color-blanco">
+                  <div class="col col-33">
+                     {{detalle.mov_fec_mov | limitTo:10}} 
+                  </div> 
+                  <div class="col">
+                     {{detalle.tip_mov_desc}} 
+                  </div> 
+               </div>
+               <div class="row color-blanco">
+                  <div class="col col-33">
+                   <span ng-show="{{detalle.mov_mnt_mov}} > 0" class="color-blanco"> {{detalle.mov_mnt_mov | currency : CLP : 0}}  </span>
+                   <span ng-show="{{detalle.mov_mnt_mov}} < 0" class="royal">  {{detalle.mov_mnt_mov | currency : CLP : 0}}  </span> 
+                  </div>
+                  <div align="center" class="col col-33">
+                    <span ng-show="{{detalle.mov_mnt_mov}} > 0" class="ion-ios-cloud-upload-outline color-blanco letra-grande"> </span>       
+                    <span ng-show="{{detalle.mov_mnt_mov}} < 0" class="ion-ios-cloud-download royal letra-grande"> </span>
+                  </div> 
+                  <div align="right" class="col col-33">
+                    <span ng-show="{{detalle.mov_sal_cta}} >= 0" class="color-blanco"> {{detalle.mov_sal_cta | currency : CLP : 0}}</span>
+                    <span ng-show="{{detalle.mov_sal_cta}} < 0" class="royal"> {{detalle.mov_sal_cta | currency : CLP : 0}}</span>
+                  </div> 
+               </div>
+               <div class="row color-blanco">
+                  <div class="col">
+                     {{detalle.mov_obs}} 
+                  </div> 
+               </div>
+            </div>
+         </div>
+  </ion-content>
+</ion-view>
